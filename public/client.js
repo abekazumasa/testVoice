@@ -466,8 +466,9 @@ function createPeerConnection( stream, strRemoteSocketID )
     // RTCPeerConnectionオブジェクトの生成
     let config = {
         "iceServers": [
-            {"url":"stun:turn.yourdomain.com:3478"},
-            {"url":"turn:turn.yourdomain.com:3478", "username":"danmaro", "credential":"danmaro117"}
+            {"url":"stun:turn.yourdomain.com:1337"},
+            {"url":"turn:turn.yourdomain.com:1337?transport=udp", "username":"danmaro", "credential":"danmaro117"},
+            {"url":"turn:turn.yourdomain.com:1337?transport=tcp", "username":"danmaro", "credential":"danmaro117"}
         ]
     };
     let rtcPeerConnection = new RTCPeerConnection( config );
